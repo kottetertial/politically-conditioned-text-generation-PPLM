@@ -7,18 +7,16 @@ import argparse
 import csv
 import json
 import math
-import numpy as np
 import os
 import time
+
+import numpy as np
 import torch
 import torch.nn.functional as F
 import torch.optim
 import torch.optim as optim
 import torch.utils.data as data
-from nltk.tokenize.treebank import TreebankWordDetokenizer
-from torchtext import data as torchtext_data
-from torchtext import datasets
-from tqdm import tqdm, trange
+from tqdm import tqdm
 from transformers import BertTokenizer, BertModel
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
@@ -27,7 +25,7 @@ from pplm_classification_head import ClassificationHead
 torch.manual_seed(0)
 np.random.seed(0)
 EPSILON = 1e-10
-example_sentence = "This is incredible! I love it, this is the best chicken I have ever had."
+example_sentence = "Hate and fear are being given too much oxygen by those who pretend to love America, but who don’t understand America. To confront the ideology of hate requires caring about all people. That’s the America I know: the most diverse, multi-racial, dynamic nation in history."
 max_length_seq = 512
 
 
